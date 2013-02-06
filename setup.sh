@@ -28,9 +28,9 @@ echo
 
 find . -name "*.config" | while read FILENAME;
 do
-	echo "SMUDGING: " $FILENAME
-	git rm $FILENAME
-	git checkout $FILENAME
+	echo "SMUDGING: " $FILENAME | cut -c 2-
+	rm $FILENAME | cut -c 2-
+	git checkout $FILENAME | cut -c 2-
 done
 
 echo ""
